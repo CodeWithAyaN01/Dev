@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.parent {
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+.JobCard {
+  background-color: white;
+  margin: 1rem;
+  border-radius: 1rem;
+  width: 300px;
+  border: 2px solid rgb(138, 137, 137);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.navbar {
+  margin: 10px;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  color: black;
+  font-size: x-large;
+  text-align: center;
+  border: 5px solid rgb(119, 118, 118)
+}
+
+.UpperPart {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;        /* vertically centers items */
+  justify-content: space-between; /* pushes button to right side */
+  padding: 0 1rem;            /* adds some space on sides */
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.UpperPart img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+  border: solid rgb(121, 120, 120);
+}
+.UpperPart button {
+  
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 3rem;
+  margin-right: 1rem;
+  border: none;
+  background-color: rgb(233, 233, 233);
+  transition: all 0.25s ease;
+  
+}
+.UpperPart button:hover {
+  background-color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.MiddlePart {
+  padding: 3rem;
+  align-items: flex-start;
+  border-bottom: 1px solid;
+}
+
+.MiddlePart p {
+  margin: 0;            /* removes browser default margins */
+  text-align: left;
+}
+.MiddlePart h4 {
+  font-size:x-large
+  
+}
+
+
+.LowerPart {
+  border-top: 1px #b1b1b1;
+  
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.LowerPart button {
+  border-radius: 0.5rem;
+  color: #f0f0f0;
+  background-color:rgb(0, 0, 0);
+  cursor: pointer;
+  border-color: #b1b1b1;
+  width: 4.5rem;
+  transition: all 0.25s ease;
+}
+
+.LowerPart button:hover {
+  background-color: #34a01a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}

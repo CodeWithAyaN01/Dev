@@ -1,0 +1,7 @@
+width: fir-content;
+
+justify-content: space-between;
+
+shrink-0
+
+overflow-x/y-auto 

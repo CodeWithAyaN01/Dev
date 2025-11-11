@@ -1,0 +1,7 @@
+1. CREATE DIR USING "npm create vite"
+2. install all modules "npm install" || npm run dev
+3. learn about components
+4. props drilling {
+    passing data from parent to childs
+    Used arr.map function also
+}
