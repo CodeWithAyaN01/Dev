@@ -1,0 +1,49 @@
+Category,Event Listener,Description
+Mouse,onClick,Fired when an element is clicked
+Mouse,onDoubleClick,Fired when an element is double-clicked
+Mouse,onMouseDown,Fired when a mouse button is pressed
+Mouse,onMouseUp,Fired when a mouse button is released
+Mouse,onMouseMove,Fired when the mouse is moved over an element
+Mouse,onMouseEnter,Fired when the mouse enters an element (doesn’t bubble)
+Mouse,onMouseLeave,Fired when the mouse leaves an element (doesn’t bubble)
+Mouse,onMouseOver,Fired when the mouse moves over an element (bubbles)
+Mouse,onMouseOut,Fired when the mouse moves out of an element (bubbles)
+Keyboard,onKeyDown,Fired when a key is pressed
+Keyboard,onKeyPress,Fired when a key is pressed and held (deprecated in React 17+)
+Keyboard,onKeyUp,Fired when a key is released
+Form,onChange,Fired when the value of an input changes
+Form,onInput,Fired every time user input changes
+Form,onSubmit,Fired when a form is submitted
+Form,onFocus,Fired when an element gains focus
+Form,onBlur,Fired when an element loses focus
+Form,onInvalid,Fired when a form element fails validation
+Form,onReset,Fired when a form is reset
+Clipboard,onCopy,Fired when content is copied
+Clipboard,onCut,Fired when content is cut
+Clipboard,onPaste,Fired when content is pasted
+Media,onPlay,Fired when media playback starts
+Media,onPause,Fired when playback is paused
+Media,onEnded,Fired when playback reaches the end
+Media,onVolumeChange,Fired when volume changes
+Media,onTimeUpdate,Fired as media plays and playback position changes
+Media,onLoadedData,Fired when media data is loaded
+Media,onError,Fired when an error occurs during media playback
+Drag & Drop,onDrag,Fired continuously while dragging
+Drag & Drop,onDragStart,Fired when dragging starts
+Drag & Drop,onDragEnd,Fired when dragging ends
+Drag & Drop,onDragEnter,Fired when a dragged item enters a valid drop target
+Drag & Drop,onDragLeave,Fired when a dragged item leaves a valid drop target
+Drag & Drop,onDragOver,Fired when a dragged item is over a drop target
+Drag & Drop,onDrop,Fired when an item is dropped
+Pointer & Touch,onPointerDown,"Fired when a pointer (mouse, pen, touch) is pressed"
+Pointer & Touch,onPointerUp,Fired when a pointer is released
+Pointer & Touch,onPointerMove,Fired when the pointer moves
+Pointer & Touch,onPointerEnter,Fired when pointer enters an element
+Pointer & Touch,onTouchStart,Fired when a touch starts
+Pointer & Touch,onTouchMove,Fired when a finger moves across screen
+Pointer & Touch,onTouchEnd,Fired when a touch ends
+Pointer & Touch,onTouchCancel,Fired when a touch is interrupted
+UI,onScroll,Fired when an element is scrolled
+UI,onResize,Fired when the window is resized
+UI,onLoad,Fired when an element or resource is loaded
+UI,onError,Fired when a resource fails to load
