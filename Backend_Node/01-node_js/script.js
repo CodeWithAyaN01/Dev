@@ -1,10 +1,22 @@
 // Learning FS module in Node.js
 
-const fs = require('fs') 
-// Import file system module
+const { error } = require('node:console')
+const fs = require('node:fs')
 
-const content = fs.readFileSync("./Notes.txt", "utf-8")
-// Read file synchronously as text
+console.log("start of the file")
 
-console.log(content)
-// Print file content
+// Blocking Code With sync
+// const content = fs.readFileSync('file.txt', 'utf-8') // holds till the file is read...
+
+
+// Non Blocking Code Async
+
+const content = fs.readFile('file.txt', 'utf-8' , function(error,data) {
+    if(error) console.log(error)
+    else console.log(data);
+})
+
+
+console.log("end of the file")
+
+// fs.writeFileSync('copy.txt', content , 'utf-8') // overwrite the content
