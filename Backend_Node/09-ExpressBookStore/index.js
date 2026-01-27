@@ -38,6 +38,7 @@ app.use((req,res,next) => {
     next()
 } )
 
+// ROUTES
 
 app.get('/books', (req,res) => {
     res.json(books) // gives the response in the json format
