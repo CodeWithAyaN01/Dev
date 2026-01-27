@@ -14,6 +14,13 @@ app.use(express.json()) // -> goes to next
 
 // custom middleware 
 
+// function for Middleware
+
+function middleWarefunction(req,res,next) {
+    console.log("MiddleWare 3: Running The get Book by ID request...👌")
+    next()
+}
+
 app.use((req,res,next) => {
     console.log("I am a middleware A")
     // return res.status(400).json({message : "the middleware is working this means the stucking of res"}) // res to the user with stuck code
@@ -21,7 +28,7 @@ app.use((req,res,next) => {
 })
 
 app.use((req,res,next) => {
-    console.log("I am the final middleware")
+    console.log("I am the middleware B")
     next()
 })
 
@@ -36,7 +43,7 @@ app.get('/books', (req,res) => {
     res.json(books) // gives the response in the json format
 })
 
-app.get('/books/:id', (req,res) => {
+app.get('/books/:id', middleWarefunction, (req,res) => {
     const id = req.params.id // id that we put in URL /books/:id -> this id is params.id
     const book = books.find((e) => e.id == id) // e.id and id is different # here the id is passed as a string
 
