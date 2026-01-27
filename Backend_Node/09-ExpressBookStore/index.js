@@ -1,4 +1,5 @@
 const express = require('express')
+const fs  = require('node:fs')
 const app = express()
 const PORT = 8000
 
@@ -9,7 +10,27 @@ const books = [
 ]
 
 // Middleware... (Plugins) to read JSON data coming from client
-app.use(express.json()) 
+app.use(express.json()) // -> goes to next
+
+// custom middleware 
+
+app.use((req,res,next) => {
+    console.log("I am a middleware A")
+    // return res.status(400).json({message : "the middleware is working this means the stucking of res"}) // res to the user with stuck code
+    next() // sends the req to the next middleware or to the route
+})
+
+app.use((req,res,next) => {
+    console.log("I am the final middleware")
+    next()
+})
+
+app.use((req,res,next) => {
+    const log = `[Date : [${Date.now()}] Method: ${req.method} Path: ${req.path}]\n`
+    fs.appendFileSync('./log.txt', log, 'utf-8')
+    next()
+} )
+
 
 app.get('/books', (req,res) => {
     res.json(books) // gives the response in the json format
