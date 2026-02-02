@@ -2,8 +2,6 @@
 const { defineConfig } = require('drizzle-kit')
 require('dotenv/config')
 
-dotenv.config()
-
 const config = defineConfig({
     dialect: "postgresql",
     out: "./drizzle",

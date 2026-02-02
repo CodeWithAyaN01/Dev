@@ -1,0 +1,6 @@
+[Date : [1770043741940] Method: GET Path: /]
+[Date : [1770043776476] Method: GET Path: /books]
+[Date : [1770043781060] Method: GET Path: /books/1]
+[Date : [1770043784834] Method: GET Path: /books]
+[Date : [1770043801855] Method: GET Path: /books]
+[Date : [1770043808890] Method: GET Path: /books]
