@@ -9,8 +9,25 @@ import { eq } from 'drizzle-orm'
 
 const router = express.Router()
 
-router.get('/', (req, res)  => {
-    res.json({ message: "User route working" })
+router.patch('/', async (req, res) => {
+    const user = req.user
+
+    if(!user) {
+         return res.status(401).json({error: `you are not logged in`})
+    }
+    const { name } = req.body
+    await db.update(userTable).set({ name }).where(eq(userTable.id, user.id))
+
+    return res.json({Status: `succss`})
+})
+
+router.get('/', async (req, res)  => {
+    const user = req.user
+
+    if(!user) {
+        return res.status(401).json({error: `you are not logged in`})
+    }
+    return res.json({ user })
 })
 
 router.post('/signup', async (req, res) => {
@@ -70,6 +87,8 @@ router.post('/login', async (req, res)  => {
     if (checkHash !== existingHash) {
         return res.json({error : 'Your password is not correct'}) // for wrong password
     }   
+
+    // session Creation for every user
     const [session] = await db.insert(userSession).values({
         userId: existingUser.id,
 
