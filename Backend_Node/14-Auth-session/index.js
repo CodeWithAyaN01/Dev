@@ -56,9 +56,6 @@ app.use(authenticationMiddleware)
 //     }catch (error) {
 //         res.json({error: `You are a tammpered token`})
 //     }
-    
-
-})
 
 app.use('/user', userRoutes)
 app.use('/admin', adminRoutes)

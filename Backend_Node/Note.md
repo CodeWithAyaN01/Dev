@@ -29,3 +29,8 @@
 - docker compose up -d
 - docker compese down
 ```
+# JsonWebTocken
+```
+pnpm add jsonwebtoken
+npm i jsonwebtoken
+```
