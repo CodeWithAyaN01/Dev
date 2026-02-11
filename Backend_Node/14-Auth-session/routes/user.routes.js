@@ -1,20 +1,17 @@
 import express from 'express'
 import db from '../db/index.js'
-import { userTable, userSession } from '../db/schema.js'
+import { userTable } from '../db/schema.js'
 import { randomBytes, createHmac } from 'node:crypto' // for saltPassword
 import { eq } from 'drizzle-orm'
+import jwt from 'jsonwebtoken'
+import {ensureAuthentication} from '../middleware/auth.middleware.js'
 
 
 //userRouter
 
 const router = express.Router()
 
-router.patch('/', async (req, res) => {
-    const user = req.user
-
-    if(!user) {
-         return res.status(401).json({error: `you are not logged in`})
-    }
+router.patch('/', ensureAuthentication, async (req, res) => {
     const { name } = req.body
     await db.update(userTable).set({ name }).where(eq(userTable.id, user.id))
 
@@ -89,14 +86,24 @@ router.post('/login', async (req, res)  => {
     }   
 
     // session Creation for every user
-    const [session] = await db.insert(userSession).values({
-        userId: existingUser.id,
+    // const [session] = await db.insert(userSession).values({
+    //     userId: existingUser.id,
 
-    }).returning({id: userSession.id})
+    // }).returning({id: userSession.id})
+
+    const payload = {
+        id: existingUser.id,
+        email: existingUser.email,
+        name: existingUser.name
+    }
+    const token = jwt.sign(payload, process.env.JWT_SECRET)
+
+
     // password matches
     return res.json({
         msg: `Welcome ${existingUser.name}`,
-        sessionId: session.id
+        // sessionId: session.id
+        token: token
     })
 
 })
