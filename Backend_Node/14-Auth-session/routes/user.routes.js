@@ -91,6 +91,8 @@ router.post('/login', async (req, res)  => {
 
     // }).returning({id: userSession.id})
 
+
+    // token creating with JWT
     const payload = {
         id: existingUser.id,
         email: existingUser.email,
