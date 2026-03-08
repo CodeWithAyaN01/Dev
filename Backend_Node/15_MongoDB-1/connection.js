@@ -7,4 +7,4 @@ export const connectMongoDB = async (connnectionURL) => {
   } catch (err) {
     console.error(`Error: ${err.message}`);
   }
-};
+}

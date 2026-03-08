@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
   // this also gets all the data like name, salt,  other than "email"
   const existinUser = await User.findOne({
     email,
-  });
+  })
   if (!existinUser) {
     return res
       .status(404)
