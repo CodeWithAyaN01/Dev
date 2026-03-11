@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Program 2 - String Ops & Palindrome</title>
+</head>
+
+<body>
+
+<h1>JavaScript Program 2</h1>
+
+<script>
+
+    let str = prompt("Enter a string:");
+
+    alert("Length of string: " + str.length);
+
+    let extracted = str.slice(str.indexOf("JavaScript"), str.indexOf("JavaScript") + 10);
+    console.log("Extracted word: " + extracted);
+
+    let replaced = str.replace("JavaScript", "Programming");
+    console.log("After replacement: " + replaced);
+
+    function isPalindrome(s) {
+        let reversed = s.split("").reverse().join("");
+        return s === reversed;
+    }
+
+    if (isPalindrome(str)) {
+        console.log(str + " is a palindrome");
+    } 
+    else {
+        console.log(str + " is not a palindrome");
+    }
+
+</script>
+
+</body>
+</html>
