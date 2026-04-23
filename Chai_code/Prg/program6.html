@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>React Counter with useEffect</title>
+
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel for JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- React Counter Script -->
+    <script type="text/babel">
+
+        const useState = React.useState;
+        const useEffect = React.useEffect;
+
+        function FunctionCounter() {
+            const [count, setCount] = useState(0);
+
+            useEffect(() => {
+                console.log("FunctionCounter has loaded!");
+            }, []);
+
+            return (
+                <div>
+                    <h2>Function Component</h2>
+                    <p>Count: {count}</p>
+
+                    <button onClick={() => setCount(count + 1)}>Increment</button>
+                    <button onClick={() => setCount(count - 1)}>Decrement</button>
+                    <button onClick={() => setCount(count * 2)}>Double</button>
+                    <button onClick={() => setCount(0)}>Reset</button>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<FunctionCounter />);
+
+    </script>
+</body>
+</html>
