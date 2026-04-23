@@ -59,5 +59,5 @@ app.delete("/api/products/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port} , http://192.168.1.12:3000/ `);
 });
