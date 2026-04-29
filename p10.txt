@@ -23,12 +23,12 @@ pca = PCA(n_components=2)
 X_pca = pca.fit_transform(X_scaled)
 
 # 5. Transform Centroids: Move 30D cluster centers to 2D space
-centroids_original = kmeans.cluster_centers_
-centroids_pca = pca.transform(centroids_original) 
+# centroids_original = kmeans.cluster_centers_
+# centroids_pca = pca.transform(centroids_original) 
 
 # 6. Visualization
 plt.figure(figsize=(10, 7))
-colors = ["#e74c3c", "#3498db"] # Red and Blue
+colors = ["red", "blue"] # Red and Blue
 
 for cluster, color in zip(range(2), colors):
     plt.scatter(
@@ -38,10 +38,10 @@ for cluster, color in zip(range(2), colors):
     )
 
 # Plot Centroids
-plt.scatter(
-    centroids_pca[:, 0], centroids_pca[:, 1],
-    s=250, c='black', marker='X', label="Centroids"
-)
+# plt.scatter(
+#     centroids_pca[:, 0], centroids_pca[:, 1],
+#     s=250, c='black', marker='X', label="Centroids"
+# )
 
 plt.legend(loc="upper right")
 plt.title("K-Means Clustering on Breast Cancer Dataset (PCA-Reduced)")
